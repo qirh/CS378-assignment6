@@ -1,0 +1,1 @@
+ssh -v -i amazonkeypair.pem ubuntu@54.90.86.184
