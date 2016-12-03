@@ -19,6 +19,6 @@
  
     <servlet-mapping>
         <servlet-name>Resteasy</servlet-name>
-        <url-pattern>/assignment6</url-pattern>
+        <url-pattern>/a6</url-pattern>
     </servlet-mapping>      
 </web-app>

@@ -1,4 +1,4 @@
-package a6;
+package assignment6;
 
 import java.util.HashSet;
 import java.util.Set;

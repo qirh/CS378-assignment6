@@ -1,4 +1,4 @@
-package a6;
+package assignment6;
 
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
