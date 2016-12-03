@@ -6,18 +6,18 @@
        
 	  <context-param>
             <param-name>javax.ws.rs.Application</param-name>
-            <param-value>assignment7.HelloWorldApplication</param-value>
+            <param-value>assignment6.HelloWorldApplication</param-value>
       </context-param>
       
       <servlet>
-        <servlet-name>Resteasy</servlet-name>
+        <servlet-name>a6</servlet-name>
         <servlet-class>
             org.jboss.resteasy.plugins.server.servlet.HttpServletDispatcher
         </servlet-class>
       </servlet>
  
     <servlet-mapping>
-        <servlet-name>Resteasy</servlet-name>
-        <url-pattern>/assignment7</url-pattern>
+        <servlet-name>a6</servlet-name>
+        <url-pattern>/myeavesdrop</url-pattern>
     </servlet-mapping>
 </web-app>
