@@ -1,4 +1,4 @@
-package assignment7;
+package a6;
 
 import java.util.HashSet;
 import java.util.Set;
@@ -6,7 +6,7 @@ import java.util.Set;
 import javax.ws.rs.ApplicationPath;
 import javax.ws.rs.core.Application;
 
-@ApplicationPath("/assignment7")
+@ApplicationPath("/")
 public class HelloWorldApplication extends Application {
 
 	private Set<Object> singletons = new HashSet<Object>();

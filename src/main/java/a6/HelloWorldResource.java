@@ -1,10 +1,10 @@
-package assignment7;
+package a6;
 
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
 
-@Path("/helloworld")
+@Path("/myeavesdrop")
 public class HelloWorldResource {
 	
 	public HelloWorldResource() {
