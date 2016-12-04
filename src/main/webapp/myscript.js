@@ -35,7 +35,7 @@ function loadXMLDoc(url,cfunc) {
 
 function foo()
 {
-loadXMLDoc("http://localhost:8080/js-example/meetings/myeavesdrop/meetings/",function()
+loadXMLDoc("http://54.90.86.184:8080/js-example/meetings/myeavesdrop/meetings/",function()
   {
   if (xmlhttp.readyState==4 && xmlhttp.status==200)
     {
