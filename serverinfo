@@ -1,1 +1,4 @@
 ssh -v -i amazonkeypair.pem ubuntu@54.90.86.184
+
+http://localhost:8080/js-example/app/path/helloworld-resource/
+http://localhost:8080/js-example/ajaxexample.html

@@ -6,7 +6,7 @@
        
 	  <context-param>
             <param-name>javax.ws.rs.Application</param-name>
-            <param-value>assignment7.HelloWorldApplication</param-value>
+            <param-value>js.HelloWorldApplication</param-value>
       </context-param>
       
       <servlet>
@@ -18,6 +18,6 @@
  
     <servlet-mapping>
         <servlet-name>Resteasy</servlet-name>
-        <url-pattern>/assignment7</url-pattern>
+        <url-pattern>/app</url-pattern>
     </servlet-mapping>
 </web-app>
