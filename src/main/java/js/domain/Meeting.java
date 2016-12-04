@@ -15,11 +15,12 @@ public class Meeting {
 	@XmlElement
 	private String year;
 	
-	@XmlElement(name = "link")
-	private Set<String> links;
+	@XmlElement(name = "i")
+	private Integer i;
 	
 	public Meeting() {
-		links = new HashSet<String>();
+		year = "";
+		i = new Integer(0);
 	}
 	public void setYear(String year) {
 		if( year.matches("^\\d+$") )
@@ -30,11 +31,11 @@ public class Meeting {
 	public String getYear() {
 		return year;
 	}
-	public Set<String> getLink() {
-        return links;
+	public void setInteger(int i) {
+        this.i = i;
     }
-    public void addLink(String link) {
-        this.links.add(link);
+	public Integer getInteger() {
+        return i;
     }
     public String toString(){
     	return year;

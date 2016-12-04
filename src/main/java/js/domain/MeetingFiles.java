@@ -10,21 +10,24 @@ import javax.xml.bind.annotation.XmlAccessType;
 
 @XmlRootElement(name = "meetings")
 @XmlAccessorType(XmlAccessType.FIELD)
-public class Meetings {
+public class MeetingFiles {
 	
 	@XmlElement(name= "meeting")
-    private List<Meeting> meetings;
+    private List<MeetingFile> meetings;
     
-    public Meetings(){
-    	meetings = new ArrayList<Meeting>();
+    public MeetingFiles(){
+    	meetings = new ArrayList<MeetingFile>();
     }
-    public List<Meeting> getMeetings() {
+    public List<MeetingFile> getMeetings() {
     	return meetings;
     }
     public int size() {
         return meetings.size();
     }
-    public void addMeeting(Meeting meeting) {
+    public int size4() {
+        return meetings.size()/4;
+    }
+    public void addMeeting(MeetingFile meeting) {
     	if( ! meetings.contains(meeting) )
     		meetings.add(meeting);
     }

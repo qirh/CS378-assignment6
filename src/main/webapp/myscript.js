@@ -1,7 +1,7 @@
 /**
  * 
  */
-
+var xmlhttp;
 function myFunction() {
     var x, text;
 
@@ -20,4 +20,61 @@ function myFunction() {
     
     console.log("Testing console.");
     console.log(text);
+}
+function loadXMLDoc(url,cfunc) {
+    if (window.XMLHttpRequest) {
+    	xmlhttp=new XMLHttpRequest();
+    }
+    else {
+    	xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+    } 
+    xmlhttp.onreadystatechange=cfunc;
+    xmlhttp.open("GET",url,true);
+    xmlhttp.send();
+}
+function myFunction2() {
+ 	loadXMLDoc("http://localhost:8080/js-example/meetings/myeavesdrop/projects/" + document.getElementById("select").value + "/meetings/",function(){
+    	if (xmlhttp.readyState==4 && xmlhttp.status==200)
+     		document.getElementById("div").innerHTML=xmlhttp.responseText;
+  });
+ }
+function myFunction3() {
+	loadXMLDoc("http://localhost:8080/js-example/app/path/helloworld-resource/",function(){
+   	if (xmlhttp.readyState==4 && xmlhttp.status==200)
+    		document.getElementById("div").innerHTML=xmlhttp.responseText;
+ });
+}
+
+function myFunction4()
+{
+loadXMLDoc("http://localhost:8080/js-example/meetings/myeavesdrop/meetings/",function()
+  {
+  if (xmlhttp.readyState==4 && xmlhttp.status==200)
+    {
+	console.log("here");
+    xmlDoc = xmlhttp.responseXML;
+    
+    //titles
+    document.write("<table><tr><th>Meeting</th><th>Count</th></tr>");
+    
+    var x=xmlDoc.getElementsByTagName("meeting");
+    
+    for (i=0;i<x.length;i++)
+    { 
+    document.write("<tr><td>");
+    document.write(x[i].getElementsByTagName("year")[0].childNodes[0].nodeValue);
+    document.write("</td><td>");
+    document.write(x[i].getElementsByTagName("i")[0].childNodes[0].nodeValue);
+    document.write("</td></tr>");
+    }
+ 
+    //end tag for table 
+    document.write("</table>");
+
+    
+    }
+  });
+
+//xmlhttp.responseText;
+//this is all xml ^^
 }

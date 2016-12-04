@@ -1,6 +1,8 @@
 package js.services;
 
 import java.io.IOException;
+import java.util.Map;
+import java.util.TreeMap;
 
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
@@ -9,10 +11,7 @@ import org.jsoup.parser.Parser;
 import org.jsoup.parser.Tag;
 import org.jsoup.select.Elements;
 
-/*
- * Use the service layer to implement the logic of calling the eavesdrop website and parsing
-the result
- */
+
 public class EavesdropService {
 
 	static EavesdropService singleton;
@@ -47,7 +46,7 @@ public class EavesdropService {
 		Elements elems = new Elements();
 		//href
 		Elements titles = doc.getElementsByTag("a");
-		//System.out.println("-- EavesdropService getProjects() titles:\n " + titles.text());
+		System.out.println("-- EavesdropService getElements() titles:\n " + titles.text());
 		for (Element elm : titles){
 			String title = elm.html();
 			
@@ -59,5 +58,14 @@ public class EavesdropService {
 			elems.add(elem);
 		}
 		return elems;
+	}
+	
+	//implement
+	public Map<String, Integer> getAllMeetingCounts() {
+		
+		//this list is what we turn, its a list of meetings		
+		Map<String, Integer> newmap = new TreeMap<String, Integer>();
+		
+		return newmap;
 	}
 }
