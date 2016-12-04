@@ -35,7 +35,7 @@ function loadXMLDoc(url,cfunc) {
 
 function foo()
 {
-loadXMLDoc("http://54.90.86.184:8080/js-example/meetings/myeavesdrop/meetings/",function()
+loadXMLDoc("http://ec2-54-90-86-184.compute-1.amazonaws.com:8080/js-example/meetings/myeavesdrop/meetings/",function()
   {
   if (xmlhttp.readyState==4 && xmlhttp.status==200)
     {
@@ -57,14 +57,10 @@ loadXMLDoc("http://54.90.86.184:8080/js-example/meetings/myeavesdrop/meetings/",
     document.write(x[i].getElementsByTagName("i")[0].childNodes[0].nodeValue);
     document.write("</td></tr>");
     }
- 
-    //end tag for table 
+  
     document.write("</table>");
 
     
     }
   });
-
-//xmlhttp.responseText;
-//this is all xml ^^
 }
