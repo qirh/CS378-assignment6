@@ -2,7 +2,9 @@ name: Saleh Alghusson
 eid: SOA322
 appURL: ec2-54-90-86-184.compute-1.amazonaws.com
 cloud: Amazon AWS
-notes: |
+notes:
 	can be accessed with:
 
-		http://ec2-54-90-86-184.compute-1.amazonaws.com:8080/js-example/ajaxexample.html
+		http://ec2-54-90-86-184.compute-1.amazonaws.com:8080/ajaxexample.html
+
+	for this application to work, Allow-Control-Allow-Origin must be set to *. to do so on your browser, you can download an extension and enable it.
