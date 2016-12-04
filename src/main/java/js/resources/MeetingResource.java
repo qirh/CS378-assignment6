@@ -70,9 +70,9 @@ public class MeetingResource {
 	@Produces("application/xml")
 	public StreamingOutput getMeetings()  {
 		try{
-			System.out.println("1");
+			//system.out.println("1");
 			for(String x : years){
-				System.out.println("2 == " + x);
+				//system.out.println("2 == " + x);
 				Document doc = ser.getDoc(URL+"/"+x);
 				final Elements elems = ser.getElements(doc);
 				final Meeting meeting = new Meeting();
@@ -84,7 +84,7 @@ public class MeetingResource {
 	        	 } 
 				 meeting.setInteger(meetingfiles.size4());
 				 meetingfiles.clearMeetings();
-				 System.out.println("add meeting == " + meeting.getYear() + " with int == " + meeting.getInteger());
+				 //system.out.println("add meeting == " + meeting.getYear() + " with int == " + meeting.getInteger());
 				 meetings.addMeeting(meeting);
 			}
 				return new StreamingOutput() {
@@ -96,7 +96,7 @@ public class MeetingResource {
 			        		 outputMeetings(outputStream, meetings);
 			        	 	 //outputMeetingNumber(outputStream, new MeetingNumber(meetings.size()/4));
 			        	 
-			        	 System.out.println("MEETINGS = " + meetings.size()/4);
+			        	 //system.out.println("MEETINGS = " + meetings.size()/4);
 			        	 meetings.clearMeetings();
 			         }
 			     };
@@ -143,62 +143,5 @@ public class MeetingResource {
 			jaxb.printStackTrace();
 			throw new WebApplicationException();
 		}
-	}
-	protected void outputMeeting(OutputStream os, Meetings meeting) throws IOException {
-		
-		try { 
-			JAXBContext jaxbContext = JAXBContext.newInstance(Meeting.class);
-			Marshaller jaxbMarshaller = jaxbContext.createMarshaller();
-	 
-			jaxbMarshaller.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, true);
-			jaxbMarshaller.marshal(meetings, os);
-		} 
-		catch (JAXBException jaxb) {
-			jaxb.printStackTrace();
-			throw new WebApplicationException();
-		}
-	}
-	protected void outputMeetingNumber(OutputStream os, MeetingFile i) throws IOException {
-		
-		try { 
-			JAXBContext jaxbContext = JAXBContext.newInstance(MeetingFile.class);
-			Marshaller jaxbMarshaller = jaxbContext.createMarshaller();
-	 
-			jaxbMarshaller.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, true);
-			jaxbMarshaller.marshal(i, os);
-		} 
-		catch (JAXBException jaxb) {
-			jaxb.printStackTrace();
-			throw new WebApplicationException();
-		}
-	}
-	
-	@GET
-	@Path("/counts")
-	@Produces("application/xml")
-	public StreamingOutput outputCount() throws JAXBException{
-		/** ERROR CHECKING **/
-		final Map<String, Integer> tmp = new TreeMap<String, Integer>(ser.getAllMeetingCounts());
-		
-		return new StreamingOutput() {
-	         public void write(OutputStream outputStream) throws IOException, WebApplicationException {  
-	        		 outputCounts(outputStream, tmp);	         }
-	      };
-	}
-
-	/** OUTPUT COUNTS **/
-	protected void outputCounts(OutputStream os, Map<String, Integer> tmp) {
-	      PrintStream writer = new PrintStream(os);   
-	      
-	      writer.println("<meetings>");
-	      for(Entry<String, Integer> entry: tmp.entrySet()){
-	    	  String name = entry.getKey();
-	    	  int value = entry.getValue();
-		      writer.println("<meeting>");
-	    	  writer.println("<name>" + name + "</name>");
-	    	  writer.println("     <count>" + value + "</count>");
-		      writer.println("</meeting>");
-	      }
-	      writer.println("</meetings>");
 	}
 }

@@ -43,6 +43,8 @@ loadXMLDoc("http://localhost:8080/js-example/meetings/myeavesdrop/meetings/",fun
     xmlDoc = xmlhttp.responseXML;
     
     //titles
+    document.write("<link rel=\"stylesheet\" href=\"style.css\"><div id=\"div\"> <h3>Computed count of meetings, with results:</h3> <br></div>");
+    
     document.write("<table border=\"1\"><tr><th>Meeting Year</th><th>Meeting Count</th></tr>");
     
     var x=xmlDoc.getElementsByTagName("meeting");

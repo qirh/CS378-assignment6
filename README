@@ -1,6 +1,8 @@
 name: Saleh Alghusson
 eid: SOA322
-appURL: <Public URL of your application>
+appURL: ec2-54-90-86-184.compute-1.amazonaws.com
 cloud: Amazon AWS
 notes: |
-	Notes
+	can be accessed with:
+
+		http://ec2-54-90-86-184.compute-1.amazonaws.com:8080/js-example/ajaxexample.html

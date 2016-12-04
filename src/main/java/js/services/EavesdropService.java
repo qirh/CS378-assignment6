@@ -46,7 +46,7 @@ public class EavesdropService {
 		Elements elems = new Elements();
 		//href
 		Elements titles = doc.getElementsByTag("a");
-		System.out.println("-- EavesdropService getElements() titles:\n " + titles.text());
+		//system.out.println("-- EavesdropService getElements() titles:\n " + titles.text());
 		for (Element elm : titles){
 			String title = elm.html();
 			
