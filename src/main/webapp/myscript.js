@@ -32,20 +32,8 @@ function loadXMLDoc(url,cfunc) {
     xmlhttp.open("GET",url,true);
     xmlhttp.send();
 }
-function myFunction2() {
- 	loadXMLDoc("http://localhost:8080/js-example/meetings/myeavesdrop/projects/" + document.getElementById("select").value + "/meetings/",function(){
-    	if (xmlhttp.readyState==4 && xmlhttp.status==200)
-     		document.getElementById("div").innerHTML=xmlhttp.responseText;
-  });
- }
-function myFunction3() {
-	loadXMLDoc("http://localhost:8080/js-example/app/path/helloworld-resource/",function(){
-   	if (xmlhttp.readyState==4 && xmlhttp.status==200)
-    		document.getElementById("div").innerHTML=xmlhttp.responseText;
- });
-}
 
-function myFunction4()
+function foo()
 {
 loadXMLDoc("http://localhost:8080/js-example/meetings/myeavesdrop/meetings/",function()
   {
@@ -55,7 +43,7 @@ loadXMLDoc("http://localhost:8080/js-example/meetings/myeavesdrop/meetings/",fun
     xmlDoc = xmlhttp.responseXML;
     
     //titles
-    document.write("<table><tr><th>Meeting</th><th>Count</th></tr>");
+    document.write("<table border=\"1\"><tr><th>Meeting Year</th><th>Meeting Count</th></tr>");
     
     var x=xmlDoc.getElementsByTagName("meeting");
     
